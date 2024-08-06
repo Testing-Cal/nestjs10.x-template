@@ -19,6 +19,13 @@ describe('AppController (e2e)', () => {
     return request(app.getHttpServer())
       .get('/')
       .expect(200)
-      .expect('Hello, Welcome to Engineering Lab! Start editing to see some magic happen :)');
+      .expect(`<html>
+        <head>
+          <title>NestJS 10</title>
+        </head>
+        <body>
+          <p>Hello, Welcome to Engineering Lab! Start editing to see some magic happen :)</p>
+        </body>
+      </html>`);
   });
 });
