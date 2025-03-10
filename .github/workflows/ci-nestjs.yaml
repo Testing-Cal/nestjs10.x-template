@@ -48,7 +48,7 @@ jobs:
 
       - name: Unit Test
         run: |
-          docker run --rm --user root -v "$GITHUB_WORKSPACE":/opt/repo -w /opt/repo $CI_IMAGE /bin/bash -c "cd /opt/repo &&  npm install -f && npm run test && npm run coverage"
+          docker run --rm --user root -v "$GITHUB_WORKSPACE":/opt/repo -w /opt/repo $CI_IMAGE /bin/bash -c "cd /opt/repo &&  npm install && npm run test -- --watchAll=false && npm run test:cov"
     
       - name: SonarQube Scan
         run: |
